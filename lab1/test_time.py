@@ -51,10 +51,31 @@ def main():
     file = "law.txt"
     with open(join(path, file), "r", encoding='utf-8') as f:
         text = f.read()
+    pattern = "art"
 
-    text = "a" * int(3e2) + "b"
-    pattern = text
-    # get_algorithms_time(text, pattern)
+    text = "a" * int(1e9) + "b"
+    # pattern = "ą" * int(1e2) + "a"
+
+    # get_algorithms_time(text, pattern, 3)
+
+    text1 = "b" + "a" * int(1e9)
+    text2 = "a" * int(5e8) + "b" + "a" * int(5e8)
+    text3 = "a" * int(1e9) + "b"
+
+    start = time.time()
+    print(text == text1)
+    end = time.time()
+    print(end - start)
+
+    start = time.time()
+    print(text == text2)
+    end = time.time()
+    print(end - start)
+
+    start = time.time()
+    print(text == text3)
+    end = time.time()
+    print(end - start)
 
     # get_pre_time(pattern)
 

@@ -1,0 +1,21 @@
+﻿dla danych w cwiczeniu czasy byly zaniedbywalnie male
+czasy wyszukiwania sufiksow takze sa bardzo male (moze przy dokladniejszym dobieraniu sufiskow i zwiekszeniu ich
+rozmiarów stalby sie one widocznie wieksze)
+raporty czasow:
+    S5 = "a" * int(1e3) + "b" * int(1e3) + "a" * int(1e2):
+        Trie budowa: 6.28s
+        SuffixTree budowa: 0.00786s
+        SlowSuffixTree budowa 0.205
+    ustawa:
+        Trie budowa: za dlugo
+        SuffixTree budowa: 2.01s
+        SlowSuffixTree budowa 3.99s
+
+pomimo tego ze, podane czasy to dane z jednej proby takze moga sie troszeczke roznic od oczekiwanego czasu wykonania,
+latwo mozna zauwazyc ktore struktury radza sobie lepiej:
+    Trie        ->  teoretycznie O(n^2) widac to w praktyce
+    SlowSuffix  ->  teoretycznie O(n^2) widoczne spowolnienie ale niezbyt drastyczne
+    Suffix      ->  teoretycznie O(n) sprawowal sie najlepiej
+
+
+dane do testow sa zapisane w main.py
