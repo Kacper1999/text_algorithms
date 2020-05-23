@@ -1,0 +1,48 @@
+*time was measured in seconds
+
+ex6:
+    Pattern resolution: (10, 15)
+        automaton make time:
+            0.0004987716674804688
+        search time:
+            20.537336349487305
+    Pattern resolution: (101, 20)
+        automaton make time:
+            0.019464969635009766
+        search time:
+            98.95960927009583
+    Pattern resolution: (104, 59)
+        automaton make time:
+            0.0409235954284668
+        search time:
+            102.00144410133362
+    Pattern resolution: (278, 221)
+        automaton make time:
+            0.8524265289306641
+        search time:
+            179.93463230133057
+
+    we can see that the size of pattern heavily influences search time as well as the time it takes to make automaton
+    (although time needed to make automaton in our case is much smaller than search time)
+
+ex7:
+    search time:
+        9.891608715057373
+        9.057172536849976
+            sum: 18.94878125190735
+    search time:
+        4.602442502975464
+        4.568016529083252
+        4.767630577087402
+        5.040134429931641
+            sum: 18.97822403907776
+    search time:
+        2.545769214630127
+        2.729926824569702
+        2.5707244873046875
+        2.559253454208374
+        2.4494376182556152
+        2.513829469680786
+        2.4100215435028076
+        2.582700729370117
+            sum: 20.361663341522217

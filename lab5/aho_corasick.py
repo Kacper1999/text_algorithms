@@ -131,17 +131,12 @@ class Automaton:
         return self.root.__str__()
 
 
-def test(text="catcgcgattatt", patterns=None):
-    if patterns is None:
-        patterns = {"acc", "a", "at", "cat", "gcg", "ctg"}
+def main():
+    text = "catcgcgattatt"
+    patterns = {"acc", "a", "at", "cat", "gcg", "ctg"}
     a = Automaton(patterns)
     print(a)
     print(a.get(text))
-
-
-def main():
-    test()
-
 
 
 if __name__ == '__main__':
