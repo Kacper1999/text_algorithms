@@ -1,6 +1,3 @@
-import ahocorasick as ac
-
-
 class Node:
     def __init__(self, parent, char: str, state: int, accepting: bool = False):
         self.parent = parent
@@ -124,6 +121,9 @@ class Automaton:
             states.append(curr_node.state)
         return valid_shifts, states
 
+    def get_last_state(self, text: str):
+        return self.get(text)[1][-1]
+
     def bfs(self):
         return self.root.bfs()
 
@@ -131,17 +131,17 @@ class Automaton:
         return self.root.__str__()
 
 
-def test(arr):
-    arr[0] = "a"
-
-
-def main():
-    patterns = {"acc", "a", "at", "cat", "gcg", "ctg"}
-    text = "catcgcgattatt"
-
+def test(text="catcgcgattatt", patterns=None):
+    if patterns is None:
+        patterns = {"acc", "a", "at", "cat", "gcg", "ctg"}
     a = Automaton(patterns)
     print(a)
     print(a.get(text))
+
+
+def main():
+    test()
+
 
 
 if __name__ == '__main__':
