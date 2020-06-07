@@ -23,6 +23,8 @@ class Column:
         output = []
         p_len = len(pattern)
         for seq, start in zip(self.sequences, self.starts):
+            for s in kmp_pattern_matching(seq, pattern):
+                print(s, start, p_len)
             output += [(s + start + p_len - 1, self.i) for s in kmp_pattern_matching(seq, pattern)]
         return output
 
@@ -101,8 +103,10 @@ def main():
     file_path = os.path.join(os.getcwd(), test_dir, file_name)
     a = f_2d_match(file_path, ["t h", "t h"])
 
-    pattern = ["T h e search of words or p a t t e r n s in stat",
-               "t h a n the previous pattern-matching mechanism."]
+    pattern = ["T h e search of words or p a t t e r ",
+               "t h a n the previous pattern-matching",
+               "are organized in order to speed u p t",
+               "of the same question is given by inde",]
     b = f_2d_match(file_path, pattern)
     c = los_2d_match(["t h", "t h"], ["t h", "t h"])
     d = lol_2d_match([["t", " ", "h"], ["t", " ", "h"]], [["t", " ", "h"], ["t", " ", "h"]])

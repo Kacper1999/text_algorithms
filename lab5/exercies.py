@@ -6,6 +6,9 @@ import time
 import cv2
 import os
 
+import random
+import string
+
 test_dir = os.path.join(os.getcwd(), "test_files")
 txt_f_name = "haystack.txt"
 png_f_name = "haystack.png"
@@ -102,16 +105,26 @@ def img_to_los(file_path):
     return ["".join([f"{x:03d}" for x in row]) for row in img]
 
 
-def main():
-    # for match in ex2():
-    #     print(match)
-    # print(ex3())
-    # for matches in ex4():
-    #     print(len(matches))
-    # ex5()
-    ex6()
-    ex7()
+def r_los(size):
+    def r_str():
+        letters = string.ascii_lowercase
+        return ''.join(random.choice(letters) for _ in range(size))
 
+    output = []
+    for i in range(size):
+        output.append(r_str())
+    return output
+
+
+def main():
+    for match in ex2():
+        print(match)
+    print(ex3())
+    m = ex4()
+    print(m)
+    # ex5()
+    # ex6()
+    # ex7()
 
 if __name__ == '__main__':
     main()

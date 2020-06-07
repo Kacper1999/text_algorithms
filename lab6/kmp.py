@@ -1,3 +1,6 @@
+"""Knuth-Morris-Pratt algorithm"""
+
+
 def prefix_function(pattern):
     pi = [0]
     k = 0
@@ -10,16 +13,17 @@ def prefix_function(pattern):
     return pi
 
 
-def kmp_pattern_matching(seq, pattern):
+def kmp_string_matching(text, pattern):
     pi = prefix_function(pattern)
     q = 0
     valid_shifts = []
-    for s in range(len(seq)):
-        while q > 0 and pattern[q] != seq[s]:
+    for s in range(len(text)):
+        while q > 0 and pattern[q] != text[s]:
             q = pi[q - 1]
-        if pattern[q] == seq[s]:
+        if pattern[q] == text[s]:
             q = q + 1
         if q == len(pattern):
-            valid_shifts.append(s - 1)
+            valid_shifts.append(s)
             q = pi[q - 1]
+            # print(f"Shift {s - len(pattern) + 1} is valid")
     return valid_shifts
