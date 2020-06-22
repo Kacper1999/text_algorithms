@@ -5,7 +5,7 @@ def transition_table(pattern):
     result = []
     alphabet = set(pattern)
     for q in range(len(pattern) + 1):
-        result.append({})
+        result.append(dict())
         for a in alphabet:
             k = min(len(pattern) + 1, q + 2)
             while True:
